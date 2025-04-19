@@ -1,0 +1,132 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Book Manager</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SimpleBookManager.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 16px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item a, .nav-item span {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 6px 10px;
+        }
+
+            .nav-item a:hover {
+                background-color: #1a252f;
+                border-radius: 4px;
+            }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ddd;
+            padding: 14px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+            footer span {
+                font-weight: 500;
+            }
+
+        .navbar-left,
+        .navbar-right {
+            display: flex;
+            gap: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+            <i class="fas fa-book-reader"></i> Book Manager
+        </a>
+
+        @if (Context.Session.GetInt32("UserId") != null)
+        {
+            <nav class="navbar-left">
+                <ul>
+                    <li class="nav-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Index", "Books")">My Books</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Create", "Books")">Add Book</a></li>
+                </ul>
+            </nav>
+        }
+
+        <nav class="navbar-right">
+            <ul>
+                @if (Context.Session.GetInt32("UserId") != null)
+                {
+                    <li class="nav-item"><span>Hello, @Context.Session.GetString("Username")!</span></li>
+                    <li class="nav-item"><a href="@Url.Action("Logout", "Account")">Logout</a></li>
+                }
+                else
+                {
+                    <li class="nav-item"><a href="@Url.Action("Login", "Account")">Login</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Register", "Account")">Register</a></li>
+                }
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <span>&copy; 2025 - Book Manager</span>
+        <span>Made by Dhruv & Abhay</span>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

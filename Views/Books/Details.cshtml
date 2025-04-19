@@ -1,0 +1,161 @@
+@model SimpleBookManager.Models.Book
+
+@{
+    ViewData["Title"] = "Book Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";  // Use shared layout for header and footer
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        color: #2c3e50;
+        text-align: center;
+    }
+
+    .details-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 40px auto;
+        word-wrap: break-word;
+    }
+
+        .details-container dl {
+            margin-bottom: 20px;
+        }
+
+        .details-container dt {
+            font-weight: bold;
+            color: #34495e;
+            width: 150px;
+            padding: 8px 0;
+        }
+
+        .details-container dd {
+            margin-left: 20px;
+            font-size: 16px;
+            color: #7f8c8d;
+            padding: 8px 0;
+        }
+
+    .btn {
+        padding: 12px 22px;
+        font-size: 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+        border: none;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+        border: none;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    .text-success {
+        color: green;
+    }
+
+    .text-warning {
+        color: orange;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+</style>
+
+<div class="details-container">
+    <h1>Book Details</h1>
+
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-3">Title:</dt>
+        <dd class="col-sm-9">@Model.Title</dd>
+
+        <dt class="col-sm-3">Author:</dt>
+        <dd class="col-sm-9">@Model.Author</dd>
+
+        <dt class="col-sm-3">Genre:</dt>
+        <dd class="col-sm-9">@Model.Genre</dd>
+
+        <dt class="col-sm-3">Publication Year:</dt>
+        <dd class="col-sm-9">@(Model.PublicationYear.HasValue ? Model.PublicationYear.Value.ToString() : "Not specified")</dd>
+
+        <dt class="col-sm-3">ISBN:</dt>
+        <dd class="col-sm-9">@(string.IsNullOrEmpty(Model.ISBN) ? "Not specified" : Model.ISBN)</dd>
+
+        <dt class="col-sm-3">Read Status:</dt>
+        <dd class="col-sm-9">
+            <span class="@(Model.IsRead ? "text-success" : "text-warning")">
+                @(Model.IsRead ? "Read" : "Unread")
+            </span>
+        </dd>
+
+        <dt class="col-sm-3">Date Added:</dt>
+        <dd class="col-sm-9">@Model.DateAdded.ToShortDateString()</dd>
+
+        @if (Model.IsRead && Model.DateRead.HasValue)
+        {
+            <dt class="col-sm-3">Date Read:</dt>
+            <dd class="col-sm-9">@Model.DateRead.Value.ToShortDateString()</dd>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.Notes))
+        {
+            <dt class="col-sm-3">Notes:</dt>
+            <dd class="col-sm-9">@Model.Notes</dd>
+        }
+    </dl>
+
+    <div class="btn-group">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+        @if (Model.IsRead)
+        {
+            <a asp-action="MarkAsUnread" asp-route-id="@Model.Id" class="btn btn-warning">Mark as Unread</a>
+        }
+        else
+        {
+            <a asp-action="MarkAsRead" asp-route-id="@Model.Id" class="btn btn-success">Mark as Read</a>
+        }
+    </div>
+</div>

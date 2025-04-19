@@ -1,0 +1,176 @@
+@model IEnumerable<SimpleBookManager.Models.Book>
+
+@{
+    ViewData["Title"] = "My Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";  // This includes your header and footer
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .row {
+        margin-bottom: 20px;
+    }
+
+    .btn-group .btn {
+        margin-right: 5px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .text-success {
+        color: green;
+    }
+
+    .text-warning {
+        color: orange;
+    }
+
+    .alert-info {
+        text-align: center;
+        background-color: #e7f3fe;
+        border: 1px solid #bee3f8;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+        .table th, .table td {
+            text-align: left;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .table td {
+            color: #34495e;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="container">
+    <!-- Title -->
+    <h1>@ViewData["Title"]</h1>
+
+    <!-- Button below the title -->
+    <div class="row mb-3">
+        <div class="col text-center">
+            <a asp-action="Create" class="btn btn-primary">Add New Book</a>
+        </div>
+    </div>
+
+    <!-- Table of Books -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Read Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                    <td>@item.Genre</td>
+                    <td>
+                        <span class="@(item.IsRead ? "text-success" : "text-warning")">
+                            @(item.IsRead ? "Read" : "Unread")
+                        </span>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                            @if (item.IsRead)
+                            {
+                                <a asp-action="MarkAsUnread" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Mark as Unread</a>
+                            }
+                            else
+                            {
+                                <a asp-action="MarkAsRead" asp-route-id="@item.Id" class="btn btn-sm btn-success">Mark as Read</a>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            No books found. <a asp-action="Create">Add your first book</a> to get started.
+        </div>
+    }
+</div>

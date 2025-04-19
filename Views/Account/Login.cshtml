@@ -1,0 +1,122 @@
+@model SimpleBookManager.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .login-container {
+        max-width: 400px;
+        margin: 80px auto;
+        padding: 35px 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #34495e;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    .text-danger {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: -8px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+    .extra-links {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+        .extra-links a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+
+            .extra-links a:hover {
+                text-decoration: underline;
+            }
+</style>
+
+<div class="login-container">
+    <h3>Login to Your Account</h3>
+
+    <form asp-action="Login">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="extra-links">
+        <p>Don't have an account? <a asp-action="Register">Register here</a></p>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

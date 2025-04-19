@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "SimpleBookManager.styles.css",
+      "AssetFile": "SimpleBookManager.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1134"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:44:13 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE="
+        }
+      ]
+    },
+    {
+      "Route": "SimpleBookManager.t78gwnywh9.styles.css",
+      "AssetFile": "SimpleBookManager.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1134"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:44:13 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t78gwnywh9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE="
+        },
+        {
+          "Name": "label",
+          "Value": "SimpleBookManager.styles.css"
+        }
+      ]
+    }
+  ]
+}

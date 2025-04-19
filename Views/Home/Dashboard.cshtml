@@ -1,0 +1,158 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // ensure this line is present
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    h2.page-title {
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .subtitle {
+        margin-bottom: 30px;
+        color: #666;
+        text-align: center;
+    }
+
+    .card-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        flex: 1;
+        min-width: 220px;
+        max-width: 260px;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+    .card-value {
+        font-size: 26px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 14px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        transition: background 0.2s;
+        margin-top: 5px;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn.secondary {
+            background-color: #6c757d;
+        }
+
+    .recent-section {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .book-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+        .book-list li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+    .book-status {
+        float: right;
+        font-size: 12px;
+        color: #888;
+    }
+
+    .button-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+</style>
+
+<h2 class="page-title">Welcome, @ViewBag.Username!</h2>
+<p class="subtitle">Track your books easily from here.</p>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Total Books</h3>
+        <div class="card-value">@ViewBag.TotalBooks</div>
+        <a asp-controller="Books" asp-action="Index" class="btn">View All</a>
+    </div>
+
+    <div class="card">
+        <h3>Books Read</h3>
+        <div class="card-value">@ViewBag.ReadBooks</div>
+        <a asp-controller="Books" asp-action="Index" class="btn">View Read</a>
+    </div>
+
+    <div class="card">
+        <h3>To Read</h3>
+        <div class="card-value">@ViewBag.UnreadBooks</div>
+        <a asp-controller="Books" asp-action="Index" class="btn">View Unread</a>
+    </div>
+</div>
+
+<div class="recent-section">
+    <h4>Recently Added</h4>
+    @if (ViewBag.RecentBooks != null && ViewBag.RecentBooks.Count > 0)
+    {
+        <ul class="book-list">
+            @foreach (var book in ViewBag.RecentBooks)
+            {
+                <li>
+                    <strong>@book.Title</strong> - @book.Author
+                    <span class="book-status">(@(book.IsRead ? "Read" : "Unread"))</span><br />
+                    <small>@book.Genre</small>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No books added yet.</p>
+    }
+
+    <div class="button-row">
+        <a asp-controller="Books" asp-action="Create" class="btn">Add Book</a>
+        <a asp-controller="Books" asp-action="Index" class="btn secondary">View All</a>
+    </div>
+</div>

@@ -1,0 +1,220 @@
+{
+  "Version": 1,
+  "Hash": "dBIzojlhsNvOJoexUkzv4/aWGKFhDPwzuIpaXcu8Q9g=",
+  "Source": "SimpleBookManager",
+  "BasePath": "_content/SimpleBookManager",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SimpleBookManager.styles.css",
+      "SourceId": "SimpleBookManager",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/SimpleBookManager",
+      "RelativePath": "SimpleBookManager#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "t78gwnywh9",
+      "Integrity": "Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SimpleBookManager.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SimpleBookManager.bundle.scp.css",
+      "SourceId": "SimpleBookManager",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/SimpleBookManager",
+      "RelativePath": "SimpleBookManager#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "t78gwnywh9",
+      "Integrity": "Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SimpleBookManager.bundle.scp.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "SimpleBookManager.bundle.scp.css",
+      "AssetFile": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SimpleBookManager.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1134"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:44:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE="
+        }
+      ]
+    },
+    {
+      "Route": "SimpleBookManager.styles.css",
+      "AssetFile": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SimpleBookManager.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1134"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:44:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE="
+        }
+      ]
+    },
+    {
+      "Route": "SimpleBookManager.t78gwnywh9.bundle.scp.css",
+      "AssetFile": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SimpleBookManager.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1134"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:44:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t78gwnywh9"
+        },
+        {
+          "Name": "label",
+          "Value": "SimpleBookManager.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE="
+        }
+      ]
+    },
+    {
+      "Route": "SimpleBookManager.t78gwnywh9.styles.css",
+      "AssetFile": "C:\\Users\\dj143.DHRUV-TUF\\Desktop\\SimpleBookManager1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\SimpleBookManager.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1134"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:44:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t78gwnywh9"
+        },
+        {
+          "Name": "label",
+          "Value": "SimpleBookManager.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z3Y+HgnMs236OXogmJjHbHvO7QSG0KQyYaxnFSNSrlE="
+        }
+      ]
+    }
+  ]
+}
